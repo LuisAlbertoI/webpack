@@ -43,7 +43,7 @@ module.exports = merge(common, {
       chunkFilename: 'static/css/[id].[fullhash:8].css'
     }),
     new FaviconsWebpackPlugin({
-      logo: path.join(__dirname, 'public/icon.svg'),
+      logo: path.join(__dirname, 'public/icon.png'),
       favicons: {
         appName: 'App PWA Test',
         appShortName: 'App PWA',
