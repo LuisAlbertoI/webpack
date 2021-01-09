@@ -16,6 +16,9 @@ module.exports = merge(common, {
     ],
     splitChunks: {
       cacheGroups: {
+        chunks: 'all',
+        minSize: 120000,
+        maxSize: 240000,
         vendors: {
           chunks: 'all',
           priority: 1,
