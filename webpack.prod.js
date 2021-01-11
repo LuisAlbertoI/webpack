@@ -15,18 +15,22 @@ module.exports = merge(common, {
       new CssMinimizerPlugin(),
     ],
     splitChunks: {
+      chunks: 'all',
+      minSize: 120000,
+      maxSize: 240000,
       cacheGroups: {
-        chunks: 'all',
-        minSize: 120000,
-        maxSize: 240000,
         vendors: {
-          chunks: 'all',
-          priority: 1,
+          priority: -10,
           filename: 'static/js/[id].[chunkhash:8].js',
           test: /[\\/]node_modules[\\/]/,
         }
       }
     }
+  },
+  performance: {
+    hints: false,
+    maxAssetSize: 512000,
+    maxEntrypointSize: 512000,
   },
   module: {
     rules: [
